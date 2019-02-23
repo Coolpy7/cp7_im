@@ -16,6 +16,7 @@ class _MyWeChatState extends State<MyWeChat> {
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
+        debugShowCheckedModeBanner: false,
         title: 'Flutter仿微信',
         theme: new ThemeData(
           primaryColorBrightness: Brightness.dark,

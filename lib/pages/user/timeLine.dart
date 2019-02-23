@@ -71,31 +71,31 @@ class _TimeLineState extends State<TimeLine>{
                       ),
                     )
                   ),
-                  new Positioned(
-                    top: 0,
-                    child:new Container(
-                      height:40.0,
-                      width: MediaQuery.of(context).size.width,
-                      child: new Row(
-                        children: <Widget>[
-                          IconButton(
-                            icon: new Icon(Icons.keyboard_arrow_left, color: Colors.white, size: 30.0),
-                            onPressed: (){
-                              Navigator.of(context).pop();
-                            },
-                          ),
-                          new Container(
-                            width: MediaQuery.of(context).size.width - 100,
-                            child: new Text('TimeLine', style: new TextStyle(
-                              fontSize: 16.0,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white
-                            ), textAlign: TextAlign.center,)
-                          )
-                        ],
-                      ),
-                    ),
-                  ),
+//                  new Positioned(
+//                    top: 0,
+//                    child:new Container(
+//                      height:40.0,
+//                      width: MediaQuery.of(context).size.width,
+//                      child: new Row(
+//                        children: <Widget>[
+//                          IconButton(
+//                            icon: new Icon(Icons.keyboard_arrow_left, color: Colors.white, size: 30.0),
+//                            onPressed: (){
+//                              Navigator.of(context).pop();
+//                            },
+//                          ),
+//                          new Container(
+//                            width: MediaQuery.of(context).size.width - 100,
+//                            child: new Text('TimeLine', style: new TextStyle(
+//                              fontSize: 16.0,
+//                              fontWeight: FontWeight.bold,
+//                              color: Colors.white
+//                            ), textAlign: TextAlign.center,)
+//                          )
+//                        ],
+//                      ),
+//                    ),
+//                  ),
                   new Positioned(
                     top: 80,
                     child: new Container(

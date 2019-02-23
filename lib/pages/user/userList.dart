@@ -111,7 +111,7 @@ List<Map> userInfoList = [
           color: new Color(0xFFefeef3),
           child: ListTile(
             leading: Icon(Icons.search),
-            title: new Text('Search'),
+            title: new Text('搜索'),
             trailing: new IconButton(
               icon: Icon(Icons.keyboard_voice),
               onPressed: (){

@@ -210,33 +210,29 @@ class _ContactsState extends State<Contacts>{
 
   getUserList() {
     List widgetList = <Widget>[
-      new SliverToBoxAdapter(
-        child:  new GestureDetector(
-          child: new Container(
-            height: 50.0,
-            color: new Color(0xFFefeef3),
-            child: ListTile(
-              leading: IconButton(
-                padding: EdgeInsets.all(0.0),
-                alignment: Alignment.centerLeft,
-                icon: Icon(Icons.arrow_back_ios,),
-                onPressed: () {
-                  Navigator.of(context).pop();
-                },
-              ),
-              title: new Text('Search'),
-              trailing: Icon(Icons.search, color: Color(0xFF61ab32)),
-            )
-          ),
-          onTap: (){
-            Navigator.of(context).push(
-              new MaterialPageRoute(
-                builder: (_) => new SearchPage()
-              )
-            );
-          },
-        ),
-      )
+//      new SliverToBoxAdapter(
+//        child:  new GestureDetector(
+//          child: new Container(
+//            height: 50.0,
+//            color: new Color(0xFFefeef3),
+//            child: ListTile(
+//              leading: IconButton(
+//                padding: EdgeInsets.all(0.0),
+//                alignment: Alignment.centerLeft,
+//                icon: Icon(Icons.arrow_back_ios,),
+//                onPressed: () {
+//                  Navigator.of(context).pop();
+//                },
+//              ),
+//              title: new Text('Search'),
+//              trailing: Icon(Icons.search, color: Color(0xFF61ab32)),
+//            )
+//          ),
+//          onTap: (){
+//
+//          },
+//        ),
+//      )
 
     ];
 
@@ -293,7 +289,6 @@ class _ContactsState extends State<Contacts>{
 
   @override
   Widget build(BuildContext context){
-
     return Scaffold(
       appBar: new AppBar(
         title: new Text(
@@ -301,6 +296,18 @@ class _ContactsState extends State<Contacts>{
           style: new TextStyle(fontSize: 20.0),
         ),
         centerTitle: true,
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.search),
+            onPressed: () {
+              Navigator.of(context).push(
+                  new MaterialPageRoute(
+                      builder: (_) => new SearchPage()
+                  )
+              );
+            },
+          ),
+        ],
       ),
       body: new Stack(
         children: <Widget>[

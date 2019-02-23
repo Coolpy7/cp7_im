@@ -63,6 +63,11 @@ class _SearchPageState extends State<SearchPage>{
   Widget build(BuildContext context){
     return new Scaffold(
         appBar: new AppBar(
+          title: new Text(
+            '搜索',
+            style: new TextStyle(fontSize: 20.0),
+          ),
+          centerTitle: true,
       ),
       body: new Container(
         child: new ListView(
@@ -73,14 +78,6 @@ class _SearchPageState extends State<SearchPage>{
                 focusNode: _focusNode,
                 autofocus: false,
                 decoration: new InputDecoration(
-                  icon: IconButton(
-                    icon: Icon(Icons.arrow_back),
-                    onPressed: (){
-                      _focusNode.unfocus();
-                      _searchController.clear();
-                      Navigator.of(context).pop();
-                    },
-                  ),
                   suffixIcon: IconButton(
                     icon: Icon(Icons.close),
                     onPressed: () async{

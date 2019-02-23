@@ -125,7 +125,7 @@ class _TalkState extends State<Talk> with TickerProviderStateMixin {
       child: new Scaffold(
         appBar: new AppBar(
           leading: new IconButton(
-            icon: Icon(Icons.keyboard_arrow_left),
+            icon: Icon(Icons.arrow_back_ios),
             onPressed: () {
 //              Navigator.of(context).pushReplacementNamed('/home');
               Navigator.of(context).pop();

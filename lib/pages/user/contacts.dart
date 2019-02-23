@@ -295,16 +295,21 @@ class _ContactsState extends State<Contacts>{
   Widget build(BuildContext context){
 
     return Scaffold(
-      body: SafeArea(
-        child: new Stack(
-          children: <Widget>[
-            new CustomScrollView(
+      appBar: new AppBar(
+        title: new Text(
+          '通信录',
+          style: new TextStyle(fontSize: 20.0),
+        ),
+        centerTitle: true,
+      ),
+      body: new Stack(
+        children: <Widget>[
+          new CustomScrollView(
               controller: controller,
               slivers: getUserList()
-            ),
-          ],
-        ),
-      )
+          ),
+        ],
+      ),
     );
   }
 }

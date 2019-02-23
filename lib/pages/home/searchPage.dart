@@ -62,6 +62,8 @@ class _SearchPageState extends State<SearchPage>{
   @override
   Widget build(BuildContext context){
     return new Scaffold(
+        appBar: new AppBar(
+      ),
       body: new Container(
         child: new ListView(
           children: <Widget>[

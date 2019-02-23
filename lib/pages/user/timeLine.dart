@@ -46,6 +46,13 @@ class _TimeLineState extends State<TimeLine>{
   Widget build(BuildContext context){
     
     return new Scaffold(
+      appBar: new AppBar(
+        title: new Text(
+          '动态',
+          style: new TextStyle(fontSize: 20.0),
+        ),
+        centerTitle: true,
+      ),
       body: new ListView(
           children: <Widget>[
             new Container(

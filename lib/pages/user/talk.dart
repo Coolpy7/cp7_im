@@ -119,14 +119,16 @@ class _TalkState extends State<Talk> with TickerProviderStateMixin {
   Widget build(BuildContext context) {
     return new WillPopScope(
       onWillPop: () {
-        Navigator.of(context).pushNamedAndRemoveUntil('/home', (_) => false);
+//        Navigator.of(context).pushNamedAndRemoveUntil('/home', (_) => false);
+        Navigator.of(context).pop();
       },
       child: new Scaffold(
         appBar: new AppBar(
           leading: new IconButton(
             icon: Icon(Icons.keyboard_arrow_left),
             onPressed: () {
-              Navigator.of(context).pushReplacementNamed('/home');
+//              Navigator.of(context).pushReplacementNamed('/home');
+              Navigator.of(context).pop();
             },
           ),
           title: new Text(

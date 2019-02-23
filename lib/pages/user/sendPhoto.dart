@@ -15,17 +15,17 @@ class _SendPhotoState extends State<SendPhoto>{
     return new Scaffold(
       appBar: new AppBar(
         leading: new IconButton(
-          icon: new Icon(Icons.arrow_back_ios, color: Colors.black45),
+          icon: new Icon(Icons.arrow_back_ios, color: Colors.white),
           onPressed: () {
             Navigator.of(context).pop(); 
           },
         ),
         elevation: 0.0,
-        backgroundColor: Colors.white,
         actions: <Widget>[
           FlatButton(
             child: new Text('发表', style: new TextStyle(
-              color: new Color(0xFF64c223),
+              color: Colors.white,
+              fontSize: 17,
               fontWeight: FontWeight.bold
             )),
             onPressed: () {

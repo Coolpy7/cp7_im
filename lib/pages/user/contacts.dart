@@ -18,14 +18,6 @@ class _ContactsState extends State<Contacts>{
   Map<String , List<Map>> userInfoList = {
     'A': [
           {
-            'name': 'kuaifengle',
-            'id': "1",
-            'checkInfo': 'https://github.com/kuaifengle',
-            'lastTime': '20.11',
-            'imageUrl': 'https://image.lingcb.net/goods/201812/2ad6f1b0-2b2c-4d71-8d0d-01679e298afc-150x150.png',
-            'backgroundUrl': 'http://pic31.photophoto.cn/20140404/0005018792087823_b.jpg'
-          },
-          {
             'name': 'Only',
             'id': "2",
             'checkInfo': '砖石一颗即永恒',
@@ -64,14 +56,6 @@ class _ContactsState extends State<Contacts>{
         ],
       'B': [
         {
-          'name': 'kuaifengle',
-          'id': "1",
-          'checkInfo': 'https://github.com/kuaifengle',
-          'lastTime': '20.11',
-          'imageUrl': 'https://image.lingcb.net/goods/201812/2ad6f1b0-2b2c-4d71-8d0d-01679e298afc-150x150.png',
-          'backgroundUrl': 'http://pic31.photophoto.cn/20140404/0005018792087823_b.jpg'
-        },
-        {
           'name': 'Only',
           'id': "2",
           'checkInfo': '砖石一颗即永恒',
@@ -109,14 +93,6 @@ class _ContactsState extends State<Contacts>{
         }
       ],
       'C': [
-        {
-          'name': 'kuaifengle',
-          'id': "1",
-          'checkInfo': 'https://github.com/kuaifengle',
-          'lastTime': '20.11',
-          'imageUrl': 'https://image.lingcb.net/goods/201812/2ad6f1b0-2b2c-4d71-8d0d-01679e298afc-150x150.png',
-          'backgroundUrl': 'http://pic31.photophoto.cn/20140404/0005018792087823_b.jpg'
-        },
         {
           'name': 'Only',
           'id': "2",

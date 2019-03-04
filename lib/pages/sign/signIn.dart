@@ -128,7 +128,7 @@ class _SignInState extends State<SignIn> with SingleTickerProviderStateMixin{
                     onPressed: () async{
                       SharedPreferences prefs = await SharedPreferences.getInstance();
                       var userInfo = {
-                        'name': 'kuaifengle',
+                        'name': 'Coolpy7',
                         'id': "1",
                         'checkInfo': 'https://github.com/coolpy7',
                         'lastTime': '20.11',

@@ -83,7 +83,7 @@ class Index_DrawerState extends State<Index_Drawer>{
                               ),
                             ),
                             new Center(
-                              child:  new Text('如果我是Dj你会爱我吗?', 
+                              child:  new Text('啦啦啦啦啦',
                                 style: new TextStyle(
                                   color: Colors.white,
                                   fontSize: 16.0,   
@@ -99,7 +99,7 @@ class Index_DrawerState extends State<Index_Drawer>{
               ),
               new ListTile(
                 leading: Icon(Icons.chat_bubble_outline, color: Colors.white),
-                title: new Text('WeChat' ,style: new TextStyle(
+                title: new Text('CoolpyChat' ,style: new TextStyle(
                     color: Colors.white
                   ),
                 ),
@@ -114,7 +114,7 @@ class Index_DrawerState extends State<Index_Drawer>{
               ),
               new ListTile(
                 leading: Icon(Icons.people_outline, color: Colors.white),
-                title: new Text('Contacts', style: new TextStyle(
+                title: new Text('通讯录', style: new TextStyle(
                     color: Colors.white
                   ),
                 ),
@@ -130,7 +130,7 @@ class Index_DrawerState extends State<Index_Drawer>{
               ),
               new ListTile(
                 leading: Icon(Icons.timeline, color: Colors.white),
-                title: new Text('TimeLine' ,style: new TextStyle(
+                title: new Text('动态' ,style: new TextStyle(
                     color: Colors.white
                   ),
                 ),
@@ -153,7 +153,7 @@ class Index_DrawerState extends State<Index_Drawer>{
               ),
               new ListTile(
                 leading: Icon(Icons.settings, color: Colors.white),
-                title: new Text('setting',style: new TextStyle(
+                title: new Text('设置',style: new TextStyle(
                     color: Colors.white
                   ),
                 ),
@@ -164,7 +164,7 @@ class Index_DrawerState extends State<Index_Drawer>{
               ),
               new ListTile(
                 leading: Icon(Icons.label_outline, color: Colors.white),
-                title: new Text('SignOut',style: new TextStyle(
+                title: new Text('退出当前账号',style: new TextStyle(
                     color: Colors.white
                   ),
                 ),

@@ -1,6 +1,6 @@
 # cp7_im
 
-A new Flutter project.
+A IM App Flutter project.
 
 ## Getting Started
 

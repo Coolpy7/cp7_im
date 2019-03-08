@@ -1,8 +1,9 @@
 import 'dart:convert';
-
 import 'package:cp7_im/comm/chatmessage.dart';
+import 'package:cp7_im/util/httpUtil.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:path/path.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import './detailed.dart';
@@ -27,10 +28,14 @@ class _TalkState extends State<Talk> with TickerProviderStateMixin {
   Animation animationTalk;
   AnimationController controller;
 
+//  var hu = new httpUtil();
+
   @override
   void initState() {
-    controller = new AnimationController(
-        duration: new Duration(seconds: 1), vsync: this);
+    super.initState();
+//    hu.baseUrl = 'http://192.168.200.251:9999';
+
+    controller = new AnimationController(duration: new Duration(seconds: 1), vsync: this);
     animationTalk = new Tween(begin: 1.0, end: 1.5).animate(controller)
       ..addStatusListener((state) {
         if (state == AnimationStatus.completed) {
@@ -41,8 +46,6 @@ class _TalkState extends State<Talk> with TickerProviderStateMixin {
       });
 
     fsNode1.addListener(_focusListener);
-
-    super.initState();
   }
 
   _focusListener() async {
@@ -64,9 +67,13 @@ class _TalkState extends State<Talk> with TickerProviderStateMixin {
   }
 
   void getImage() async {
-    var image = await ImagePicker.pickImage(source: ImageSource.gallery);
-    if (image != null) {
-      autoTalk(image, 'image');
+    var img = await ImagePicker.pickImage(source: ImageSource.gallery);
+    if (img != null) {
+//      var res = await hu.PostStream("/api/upload/", {}, basename(img.path), false, img.readAsBytesSync());
+//      if (res["ok"] == true) {
+//        print(res);
+//      }
+      autoTalk(img, 'image');
     }
   }
 
@@ -74,9 +81,7 @@ class _TalkState extends State<Talk> with TickerProviderStateMixin {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     var mySelf = json.decode(prefs.getString('userInfo'));
 
-    if (mySelf['id'] != widget.detail['id']) {
-
-    }
+    if (mySelf['id'] != widget.detail['id']) {}
 
     ChatMessage message = new ChatMessage(
       name: mySelf['name'],

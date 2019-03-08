@@ -66,9 +66,10 @@ class _HomeState extends State<Home> {
         type: 1,
         current: userInfoList[i],
       );
-      _chats.insert(0, chattab);
+      _chats.add(chattab);
     }
 
+    //search bar
     UserListItem chat = new UserListItem(
       type: 0,
     );

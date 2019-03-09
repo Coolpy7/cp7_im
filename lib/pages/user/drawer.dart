@@ -27,6 +27,7 @@ class Index_DrawerState extends State<Index_Drawer>{
   }
 
   initState(){
+    super.initState();
     getUserInfo();
   }
 

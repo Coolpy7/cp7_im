@@ -1,6 +1,11 @@
-# cp7_im
+# im
 
-A IM App Flutter project.
+Coolpy7 im by flutter.
+
+## 国内包源镜像：
+
+- export PUB_HOSTED_URL=https://pub.flutter-io.cn
+- export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
 
 ## Getting Started
 

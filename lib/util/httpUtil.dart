@@ -52,7 +52,6 @@ class httpUtil {
     httpClient.badCertificateCallback = (X509Certificate cert, String host, int port) => true;
     IOClient ioClient = new IOClient(httpClient);
     var res = await ioClient.post(url, headers: header, body: body, encoding: utf8);
-//    var res = await http.post(url, headers: header, body: body, encoding: utf8);
     if (res.statusCode == 200) {
       return json.decode(res.body);
     } else {

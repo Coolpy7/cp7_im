@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:convert/convert.dart';
 import 'package:crypto/crypto.dart';
 import 'package:http/http.dart' as http;
+import 'package:http/io_client.dart';
 
 // ignore: camel_case_types
 class httpUtil {
@@ -46,7 +47,12 @@ class httpUtil {
     var digest = md5.convert(body);
     url += hex.encode(digest.bytes);
     url += "?fn=" + fileName + "&ec=" + ec.toString();
-    var res = await http.post(url, headers: header, body: body, encoding: utf8);
+
+    HttpClient httpClient = new HttpClient();
+    httpClient.badCertificateCallback = (X509Certificate cert, String host, int port) => true;
+    IOClient ioClient = new IOClient(httpClient);
+    var res = await ioClient.post(url, headers: header, body: body, encoding: utf8);
+//    var res = await http.post(url, headers: header, body: body, encoding: utf8);
     if (res.statusCode == 200) {
       return json.decode(res.body);
     } else {

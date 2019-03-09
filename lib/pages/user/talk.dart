@@ -33,7 +33,7 @@ class _TalkState extends State<Talk> with TickerProviderStateMixin {
   @override
   void initState() {
     super.initState();
-//    hu.baseUrl = 'http://192.168.200.251:9999';
+//    hu.baseUrl = 'https://192.168.200.251:9999';
 
     controller = new AnimationController(duration: new Duration(seconds: 1), vsync: this);
     animationTalk = new Tween(begin: 1.0, end: 1.5).animate(controller)
@@ -69,7 +69,7 @@ class _TalkState extends State<Talk> with TickerProviderStateMixin {
   void getImage() async {
     var img = await ImagePicker.pickImage(source: ImageSource.gallery);
     if (img != null) {
-//      var res = await hu.PostStream("/api/upload/", {}, basename(img.path), false, img.readAsBytesSync());
+//      var res = await hu.PostStream("/api/upload/", {"Authorization":"5b98a753d29aa329e80cfe7d"}, basename(img.path), false, img.readAsBytesSync());
 //      if (res["ok"] == true) {
 //        print(res);
 //      }

@@ -11,7 +11,6 @@ class ChatMessage extends StatelessWidget {
   final String avatar;
   final String senderId;
   final int showType;
-  Image img;
 
   ChatMessage(
       {this.name,
@@ -51,9 +50,7 @@ class ChatMessage extends StatelessWidget {
             ));
         break;
       case 'image':
-        img = new Image.file(val);
-        return this.img;
-        break;
+        return new Image.file(val);
       case 'text':
         return new Text(val);
         break;
@@ -161,8 +158,7 @@ class ChatMessage extends StatelessWidget {
         context,
         MaterialPageRoute(
           builder: (context) => const FullScreenWrapper(
-                imageProvider: const NetworkImage(
-                    "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2428991543,2640848292&fm=26&gp=0.jpg"),
+                imageUrl: "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2428991543,2640848292&fm=26&gp=0.jpg",
                 //backgroundDecoration:
                 //   BoxDecoration(color: Colors.white),
                 //axScale: 2.0,

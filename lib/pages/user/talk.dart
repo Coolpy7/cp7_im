@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:cp7_im/comm/chatmessage.dart';
+import 'package:cp7_im/network/msgbus.dart';
 import 'package:cp7_im/util/httpUtil.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
@@ -337,7 +338,10 @@ class _TalkState extends State<Talk> with TickerProviderStateMixin {
                                                   iconSize: 50.0,
                                                   icon: Icon(Icons.videocam,
                                                       color: Colors.black38),
-                                                  onPressed: () {},
+                                                  onPressed: () {
+                                                    eventBus.fire(new LocalPushEvent('your channel id', 'your channel name',
+                                                        'your channel description',0, 'plain title', 'plain body','item x', 5));
+                                                  },
                                                 ),
                                               ),
                                               new Container(
@@ -456,7 +460,9 @@ class _TalkState extends State<Talk> with TickerProviderStateMixin {
                                                   icon: Icon(
                                                       Icons.local_activity,
                                                       color: Colors.black38),
-                                                  onPressed: () {},
+                                                  onPressed: () {
+
+                                                  },
                                                 ),
                                               ),
                                             ],

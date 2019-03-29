@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:cp7_im/comm/chatmessage.dart';
+import 'package:cp7_im/comm/webBrowser.dart';
 import 'package:cp7_im/network/msgbus.dart';
 import 'package:cp7_im/util/httpUtil.dart';
 import 'package:flutter/material.dart';
@@ -361,7 +362,12 @@ class _TalkState extends State<Talk> with TickerProviderStateMixin {
                                                   icon: Icon(
                                                       Icons.linked_camera,
                                                       color: Colors.black38),
-                                                  onPressed: () {},
+                                                  onPressed: () {
+                                                    Navigator.push(
+                                                        context,
+                                                        new MaterialPageRoute(
+                                                            builder: (context) => new NewsWebPage("https://www.baidu.com/", 'WebViewer')));
+                                                  },
                                                 ),
                                               ),
                                               new Container(

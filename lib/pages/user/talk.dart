@@ -1,4 +1,7 @@
 import 'dart:convert';
+import 'dart:io';
+import 'package:path/path.dart' as p;
+import 'package:open_file/open_file.dart';
 import 'package:cp7_im/comm/chatmessage.dart';
 import 'package:cp7_im/comm/webBrowser.dart';
 import 'package:cp7_im/network/msgbus.dart';
@@ -6,7 +9,9 @@ import 'package:cp7_im/util/httpUtil.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:path/path.dart';
+import 'package:path_provider/path_provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:progress_dialog/progress_dialog.dart';
 
 import './detailed.dart';
 
@@ -19,6 +24,8 @@ class Talk extends StatefulWidget {
 }
 
 class _TalkState extends State<Talk> with TickerProviderStateMixin {
+  ProgressDialog pr;
+
   var fsNode1 = new FocusNode();
   var _textInputController = new TextEditingController();
 
@@ -30,7 +37,7 @@ class _TalkState extends State<Talk> with TickerProviderStateMixin {
   Animation animationTalk;
   AnimationController controller;
 
-//  var hu = new httpUtil();
+  var hu = new httpUtil();
 
   @override
   void initState() {
@@ -124,6 +131,8 @@ class _TalkState extends State<Talk> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
+    pr = new ProgressDialog(context);
+    pr.setMessage('加载中...');
     return new WillPopScope(
       onWillPop: () {
 //        Navigator.of(context).pushNamedAndRemoveUntil('/home', (_) => false);
@@ -363,10 +372,7 @@ class _TalkState extends State<Talk> with TickerProviderStateMixin {
                                                       Icons.linked_camera,
                                                       color: Colors.black38),
                                                   onPressed: () {
-                                                    Navigator.push(
-                                                        context,
-                                                        new MaterialPageRoute(
-                                                            builder: (context) => new NewsWebPage("https://www.baidu.com/", 'WebViewer')));
+                                                    Navigator.push(context, new MaterialPageRoute(builder: (context) => new NewsWebPage("https://www.baidu.com/", 'WebViewer')));
                                                   },
                                                 ),
                                               ),
@@ -386,7 +392,22 @@ class _TalkState extends State<Talk> with TickerProviderStateMixin {
                                                   iconSize: 50.0,
                                                   icon: Icon(Icons.add_location,
                                                       color: Colors.black38),
-                                                  onPressed: () {},
+                                                  onPressed: () async {
+                                                    pr.show();
+                                                    //var u = "http://icoolpy.oss-cn-beijing.aliyuncs.com/Coolpy%20HTTP%20API.pdf";
+                                                    var u = "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1553855796650&di=bb15d4b15612cd5de0f25e768ce592ba&imgtype=0&src=http%3A%2F%2Fimg00.deviantart.net%2Fa501%2Fi%2F2014%2F047%2F5%2Fd%2Fscared_fluttershy_by_techrainbow-d76o6u4.png";
+                                                    var res = await hu.GetRaw(u, {});
+                                                    if (res != false) {
+                                                      Directory appDocDir = await getApplicationDocumentsDirectory();
+                                                      String appDocPath = appDocDir.path;
+                                                      String fn = basename(u);
+                                                      var localfilepath = p.join(appDocPath, fn);
+                                                      var file = File(localfilepath);
+                                                      file.writeAsBytes(res);
+                                                      pr.hide();
+                                                      await OpenFile.open(localfilepath);
+                                                    }
+                                                  },
                                                 ),
                                               ),
                                               new Container(

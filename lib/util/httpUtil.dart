@@ -14,7 +14,7 @@ class httpUtil {
   });
 
   Future<Map<String, dynamic>> Get(url, Map<String, String> header) async {
-    if (url != "") {
+    if (url != "" && !url.startsWith('http')) {
       url = this.baseUrl + url;
     }
     var response = await http.get(url, headers: header);
@@ -25,8 +25,20 @@ class httpUtil {
     }
   }
 
+  Future<dynamic> GetRaw(url, Map<String, String> header) async {
+    if (url != "" && !url.startsWith('http')) {
+      url = this.baseUrl + url;
+    }
+    var response = await http.get(url, headers: header);
+    if (response.statusCode == 200) {
+      return response.bodyBytes.toList();
+    } else {
+      return false;
+    }
+  }
+
   Future<Map<String, dynamic>> Post(url, Map<String, String> header, Map body) async {
-    if (url != "") {
+    if (url != "" && !url.startsWith('http')) {
       url = this.baseUrl + url;
     }
     var response = await http.post(url, headers: header, body: json.encode(body), encoding: utf8);
@@ -41,7 +53,7 @@ class httpUtil {
   }
 
   Future<Map<String, dynamic>> PostStream(url, Map<String, String> header,String fileName, bool ec, List<int> body) async {
-    if (url != "") {
+    if (url != "" && !url.startsWith('http')) {
       url = this.baseUrl + url;
     }
     var digest = md5.convert(body);
@@ -60,7 +72,7 @@ class httpUtil {
   }
 
   Future<Map<String, dynamic>> PostString(url, Map<String, String> header, String body) async {
-    if (url != "") {
+    if (url != "" && !url.startsWith('http')) {
       url = this.baseUrl + url;
     }
     var response = await http.post(url, headers: header, body: body, encoding: utf8);
@@ -72,7 +84,7 @@ class httpUtil {
   }
 
   Future<Map<String, dynamic>> Put(url, Map<String, String> header, Map body) async {
-    if (url != "") {
+    if (url != "" && !url.startsWith('http')) {
       url = this.baseUrl + url;
     }
     var response = await http.put(url, headers: header, body: body, encoding: utf8);
@@ -84,7 +96,7 @@ class httpUtil {
   }
 
   Future<Map<String, dynamic>> PutString(url, Map<String, String> header, String body) async {
-    if (url != "") {
+    if (url != "" && !url.startsWith('http')) {
       url = this.baseUrl + url;
     }
     var response = await http.put(url, headers: header, body: body, encoding: utf8);
@@ -96,7 +108,7 @@ class httpUtil {
   }
 
   Future<Map<String, dynamic>> Delete(url, Map<String, String> header) async {
-    if (url != "") {
+    if (url != "" && !url.startsWith('http')) {
       url = this.baseUrl + url;
     }
     var response = await http.delete(url, headers: header);

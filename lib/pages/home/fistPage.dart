@@ -10,8 +10,8 @@ class FirstPage extends StatefulWidget{
 class _FirstPageState extends State<FirstPage>{
 
   void initState() {
-    start();
     super.initState();
+    start();
   }
 
   start() async{
@@ -20,10 +20,10 @@ class _FirstPageState extends State<FirstPage>{
       // 第一次打开App
       prefs.setBool('firstOpen', true);
       Navigator.of(context).pushAndRemoveUntil(
-        new MaterialPageRoute(
-              builder: (context) => FirstOpen(),
-            ),
-            (route) => route == null
+          new MaterialPageRoute(
+            builder: (context) => FirstOpen(),
+          ),
+              (route) => route == null
       );
       return;
     }

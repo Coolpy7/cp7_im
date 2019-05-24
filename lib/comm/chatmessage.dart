@@ -154,10 +154,8 @@ class ChatMessage extends StatelessWidget {
 
   clickDo(BuildContext context) {
     if (this.type == "image") {
-      Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (context) => const FullScreenWrapper(
+      Navigator.push(context,
+        MaterialPageRoute(builder: (context) => const FullScreenWrapper(
                 imageUrl: "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2428991543,2640848292&fm=26&gp=0.jpg",
                 //backgroundDecoration:
                 //   BoxDecoration(color: Colors.white),

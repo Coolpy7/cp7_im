@@ -481,18 +481,13 @@ class _TalkState extends State<Talk> with TickerProviderStateMixin {
                                                     //var u = "http://icoolpy.oss-cn-beijing.aliyuncs.com/Coolpy%20HTTP%20API.pdf";
                                                     var u =
                                                         "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1553855796650&di=bb15d4b15612cd5de0f25e768ce592ba&imgtype=0&src=http%3A%2F%2Fimg00.deviantart.net%2Fa501%2Fi%2F2014%2F047%2F5%2Fd%2Fscared_fluttershy_by_techrainbow-d76o6u4.png";
-                                                    var res =
-                                                        await hu.GetRaw(u, {});
+                                                    var res = await hu.GetRaw(u, {});
                                                     if (res != false) {
-                                                      Directory appDocDir =
-                                                          await getApplicationDocumentsDirectory();
-                                                      String appDocPath =
-                                                          appDocDir.path;
+                                                      Directory appDocDir = await getApplicationDocumentsDirectory();
+                                                      String appDocPath = appDocDir.path;
                                                       String fn = basename(u);
-                                                      var localfilepath = p
-                                                          .join(appDocPath, fn);
-                                                      var file =
-                                                          File(localfilepath);
+                                                      var localfilepath = p.join(appDocPath, fn);
+                                                      var file = File(localfilepath);
                                                       file.writeAsBytes(res);
                                                       pr.hide();
                                                       await OpenFile.open(

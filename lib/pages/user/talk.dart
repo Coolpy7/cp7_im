@@ -191,7 +191,7 @@ class _TalkState extends State<Talk> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    pr = new ProgressDialog(context);
+    pr = new ProgressDialog(context, ProgressDialogType.Normal);
     pr.setMessage('加载中...');
     return new WillPopScope(
       onWillPop: () {
